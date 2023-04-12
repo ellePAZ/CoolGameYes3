@@ -64,7 +64,7 @@ void Board::Draw()
 	for (int i = startIndex; i < screenSize; i++)
 	{
 		std::cout << map[i];
-		if (i % screenWidth == screenWidth - 1)
+		if (i % screenWidth == screenWidth - 1 && i != screenSize - 1)
 			std::cout << std::endl;
 	}
 }
