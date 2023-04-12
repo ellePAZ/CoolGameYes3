@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <conio.h>
 
 Player::Player(int x, int y) :
 xPos (x),
@@ -16,9 +17,22 @@ Player::~Player()
 
 std::pair<int, int> Player::CheckInput()
 {
-	// Read input from the user, should be in windows.h
-	// Return new positions
-	return { 0, 0 };
+	int a, b;
+	int verticalInput = 0;
+	int horizontalInput = 0;
+	a = _getch();
+	switch (a = _getch())
+	{
+	case 72: verticalInput = -1; break;
+	case 80: verticalInput = 1; break;
+	case 75: horizontalInput = -1; break;
+	case 77: horizontalInput = 1; break;
+	}
+
+	xPos += horizontalInput;
+	yPos += verticalInput;
+
+	return { verticalInput, horizontalInput };
 }
 
 std::pair<int, int> Player::GetPosition()
@@ -29,4 +43,10 @@ std::pair<int, int> Player::GetPosition()
 std::pair<int, int> Player::GetOldPosition()
 {
 	return { oldX, oldY };
+}
+
+void Player::UpdateOldPosition()
+{
+	oldX = xPos;
+	oldY = yPos;
 }

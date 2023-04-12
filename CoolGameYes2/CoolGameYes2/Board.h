@@ -15,6 +15,8 @@ private:
 	char* map;
 
 	Player* playerPtr;
+
+	char playerChar;
 public:
 	Board(int mapWidth, int mapHeight, int screenWidth, int screenHeight, Player* playerPtr);
 	~Board();

@@ -50,7 +50,8 @@ void Board::Update()
 	auto playerPos = playerPtr->GetPosition();
 	int index = 0;
 	GetIndex(playerPos.first, playerPos.second, index);
-	map[index] = 'P';
+	map[index] = playerChar;
+	playerChar = playerChar == 'P' ? 'R' : 'P';
 }
 
 void Board::Draw()

@@ -18,5 +18,7 @@ public:
 
 	std::pair<int, int> GetPosition();
 	std::pair<int, int> GetOldPosition();
+
+	void UpdateOldPosition();
 };
 

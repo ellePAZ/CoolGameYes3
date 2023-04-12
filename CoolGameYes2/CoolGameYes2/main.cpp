@@ -16,7 +16,8 @@ int main()
 
 	Game* gamePtr = new Game(columns, rows, columns, rows);
 
-	gamePtr->Update();
+	while (true)
+		gamePtr->Update();
 
 	delete gamePtr;
 	return 0;
